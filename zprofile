@@ -40,6 +40,11 @@ typeset -gU cdpath fpath mailpath path
 #   $cdpath
 # )
 
+fpath=(
+  $HOME/.uberdots/zshfunc
+  $fpath
+)
+
 # Set the list of directories that Zsh searches for programs.
 # /usr/bin is in here for cygwin compatibility because fml
 path=(

@@ -1,0 +1,86 @@
+pmodload 'helper'
+
+prompt_segment() {
+  local bg fg
+  [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
+  [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
+  echo -n "%{$bg%}%{$fg%} $3 "
+}
+
+prompt_reset() {
+  echo -n "%{%f%b%k%}"
+}
+
+dynamic() {
+  echo -n "\$($1)"
+}
+
+prompt_status() {
+  local symbols
+  symbols=()
+  [[ $RETVAL -ne 0 ]] && symbols+="%{%F{red}%}✘"
+  [[ $UID -eq 0 ]] && symbols+="%{%F{yellow}%}⚡"
+  [[ $(jobs -l | wc -l) -gt 0 ]] && symbols+="%{%F{cyan}%}⚙"
+
+  [[ -n "$symbols" ]] && prompt_segment black default "$symbols"
+}
+
+prompt_dir() {
+  local pwd="${PWD/#$HOME/~}"
+  local dir
+  if [[ "$pwd" == (#m)[/~] ]]; then
+    dir="$MATCH"
+    unset MATCH
+  else
+    dir="${${${(@j:/:M)${(@s:/:)pwd}##.#?}:h}%/}/${pwd:t}"
+  fi
+  prompt_segment blue black $dir
+}
+
+uberline_precommand() {
+  git-info
+}
+
+build_prompt() {
+  RETVAL=$?
+  prompt_reset
+  dynamic prompt_status
+  prompt_segment cyan black "%n@%m"
+  prompt_segment yellow black "%D{%I:%M:%S}"
+  dynamic prompt_dir
+  echo -ne '${git_info:+${(e)git_info[prompt]}}'
+  echo -ne "\n"
+  prompt_segment black default "#"
+  echo -ne " "
+  prompt_reset
+}
+
+function prompt_uberline_setup {
+  autoload -Uz add-zsh-hook
+  add-zsh-hook precmd uberline_precommand
+
+  zstyle ':prezto:module:git:info' verbose 'yes'
+  zstyle ':prezto:module:git:info:action' format ':%s'
+  zstyle ':prezto:module:git:info:added' format ' ✚'
+  zstyle ':prezto:module:git:info:ahead' format ' ⬆'
+  zstyle ':prezto:module:git:info:behind' format ' ⬇'
+  zstyle ':prezto:module:git:info:branch' format '%b'
+  zstyle ':prezto:module:git:info:commit' format '%.7c'
+  zstyle ':prezto:module:git:info:deleted' format ' ✖'
+  zstyle ':prezto:module:git:info:modified' format ' ✱'
+  zstyle ':prezto:module:git:info:position' format '%p%f'
+  zstyle ':prezto:module:git:info:renamed' format ' ➜'
+  zstyle ':prezto:module:git:info:stashed' format ' ✭'
+  zstyle ':prezto:module:git:info:unmerged' format ' ═'
+  zstyle ':prezto:module:git:info:untracked' format ' ◼'
+  zstyle ':prezto:module:git:info:dirty' format '%K{yellow}'
+  zstyle ':prezto:module:git:info:keys' format \
+    'prompt' '%K{green}%D ⭠ $(coalesce "%b" "%p" "%c")%s%A%B%S%a%d%r%U%u ' \
+    'rprompt' ''
+
+  prompt_opts=(cr percent subst)
+  PROMPT=$(build_prompt)
+  SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+}
+
+prompt_uberline_setup "$@"
