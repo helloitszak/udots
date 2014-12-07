@@ -49,6 +49,7 @@ build_prompt() {
   prompt_segment yellow black "%D{%I:%M:%S}"
   dynamic prompt_dir
   echo -ne '${git_info:+${(e)git_info[prompt]}}'
+  prompt_reset
   echo -ne "\n"
   prompt_segment black default "#"
   echo -ne " "
