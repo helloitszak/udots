@@ -30,18 +30,18 @@ zstyle ':prezto:load' pmodule \
   'history' \
   'directory' \
   'spectrum' \
-# 'gnu-utility' \
   'utility' \
   'completion' \
   'git' \
   'archive' \
   'osx' \
   'ruby' \
-# 'z' \
   'node' \
   'syntax-highlighting' \
   'history-substring-search' \
   'prompt'
+# 'z' \
+# 'gnu-utility' \
 #
 # Editor
 #
