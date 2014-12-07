@@ -1,2 +1,3 @@
 EXCLUDES="README.md README"
 SYMLINK_DIRS="zprezto vim"
+DOTFILES_DIRS="$HOME/.uberdots"
