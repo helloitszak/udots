@@ -1,5 +1,15 @@
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'Shougo/vimproc.vim', {
+\ 'build' : {
+\     'windows' : 'tools\\update-dll-mingw',
+\     'cygwin' : 'make -f make_cygwin.mak',
+\     'mac' : 'make -f make_mac.mak',
+\     'linux' : 'make',
+\     'unix' : 'gmake',
+\    },
+\ }
+
 " Unite!
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/unite-outline'
@@ -11,7 +21,14 @@ NeoBundle 'mileszs/ack.vim'
 
 " Code Completion
 " Shougo/neocomplcache.vim
-NeoBundle 'Valloric/YouCompleteMe'
+NeoBundle 'Valloric/YouCompleteMe', {
+\ 'build' : {
+\     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+\     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+\     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+\     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+\    }
+\ }
 NeoBundle 'tpope/vim-endwise'
 
 " UI

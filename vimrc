@@ -4,7 +4,6 @@ if has('vim_starting')
   set runtimepath+=~/.vim/bundle/neobundle.vim/
 end
 
-call neobundle#rc(expand('~/.vim/bundle'))
 
 try
   source ~/.vimrc.local
@@ -41,7 +40,9 @@ let g:mapleader=","
 " =============== Vundle Initialization ===============
 " Use NeoBundle plugin to manage all other plugins
 if filereadable(expand("~/.vim/bundles.vim"))
+  call neobundle#begin(expand('~/.vim/bundle/'))
   source ~/.vim/bundles.vim
+  call neobundle#end()
 endif
 
 " ================ Turn Off Swap Files ==============
