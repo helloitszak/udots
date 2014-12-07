@@ -41,7 +41,7 @@ typeset -gU cdpath fpath mailpath path
 # )
 
 fpath=(
-  $HOME/.uberdots/zshfunc
+  $HOME/.udots/zshfunc
   $fpath
 )
 
@@ -49,7 +49,7 @@ fpath=(
 # /usr/bin is in here for cygwin compatibility because fml
 path=(
   $HOME/bin
-  $HOME/.uberdots/bin
+  $HOME/.udots/bin
   /usr/local/{bin,sbin}
   /usr/bin
   $path
