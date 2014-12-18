@@ -76,7 +76,7 @@ function prompt_uberline_setup {
   zstyle ':prezto:module:git:info:untracked' format ' ◼'
   zstyle ':prezto:module:git:info:dirty' format '%K{yellow}'
   zstyle ':prezto:module:git:info:keys' format \
-    'prompt' '%K{green}%D ⭠ $(coalesce "%b" "%p" "%c")%s%A%B%S%a%d%r%U%u ' \
+    'prompt' '%K{green}%D git:$(coalesce "%b" "%p" "%c")%s%A%B%S%a%d%r%U%u ' \
     'rprompt' ''
 
   prompt_opts=(cr percent subst)

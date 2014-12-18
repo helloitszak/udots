@@ -131,13 +131,14 @@ colorscheme jellybeans
 
 " ================ Airline ======================
 set laststatus=2 "This makes the airline always show up
-let g:airline_left_sep = '⮀'
-let g:airline_left_alt_sep = '⮁'
-let g:airline_right_sep = '⮂'
-let g:airline_right_alt_sep = '⮃'
-let g:airline_branch_prefix = '⭠ '
-let g:airline_readonly_symbol = '⭤'
-let g:airline_linecolumn_prefix = '⭡'
+let g:airline_left_sep = ""
+let g:airline_left_alt_sep = "|"
+let g:airline_right_sep = ""
+let g:airline_right_alt_sep = "|"
+let g:airline_branch_prefix = "⎇"
+let g:airline_readonly_symbol = "READONLY"
+let g:airline_linecolumn_prefix = "LN"
+
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline#extensions#whitespace#enabled = 1
