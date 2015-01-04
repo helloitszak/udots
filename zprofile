@@ -49,7 +49,7 @@ fpath=(
 # /usr/bin is in here for cygwin compatibility because fml
 path=(
   $HOME/bin
-  $HOME/.udots/bin
+  $HOME/.udots/udbin
   /usr/local/{bin,sbin}
   /usr/bin
   $path
