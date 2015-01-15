@@ -30,6 +30,12 @@ if [[ -z "$LANG" ]]; then
 fi
 
 #
+# Programming
+#
+export CODE=$HOME/code
+export GOPATH=$CODE/go
+
+#
 # Paths
 #
 
@@ -50,6 +56,8 @@ fpath=(
 path=(
   $HOME/bin
   $HOME/.udots/udbin
+  $GOPATH/bin
+  /usr/local/opt/go/libexec/bin
   /usr/local/{bin,sbin}
   /usr/bin
   $path
@@ -61,10 +69,7 @@ path=(
 #
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-#
-# Go
-# 
-export GOPATH=$HOME/code/go
+
 
 #
 # Less
