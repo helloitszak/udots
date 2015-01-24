@@ -52,8 +52,8 @@ build_prompt() {
   prompt_reset
   echo -ne "\n"
   prompt_segment black default "#"
-  echo -ne " "
   prompt_reset
+  echo -ne " "
 }
 
 function prompt_uberline_setup {
