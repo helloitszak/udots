@@ -71,6 +71,7 @@ NeoBundle 'rodjek/vim-puppet'
 NeoBundle 'mutewinter/vim-tmux'
 NeoBundle 'mutewinter/nginx.vim'
 NeoBundle 'mutewinter/taskpaper.vim'
+NeoBundle 'mustache/vim-mustache-handlebars'
 
 NeoBundle 'othree/javascript-libraries-syntax.vim'
 NeoBundle 'pangloss/vim-javascript'
