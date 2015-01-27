@@ -68,8 +68,8 @@ set softtabstop=2
 set tabstop=2
 set expandtab
 
-filetype plugin on
-filetype indent on
+filetype plugin indent on
+syntax enable
 
 " Display tabs and trailing spaces visually
 set list

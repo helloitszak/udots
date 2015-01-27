@@ -85,6 +85,4 @@ NeoBundle 'tpope/vim-fireplace'
 NeoBundle 'lokaltog/vim-easymotion'
 NeoBundle 'goldfeld/vim-seek'
 
-filetype plugin indent on
-syntax enable
 NeoBundleCheck
