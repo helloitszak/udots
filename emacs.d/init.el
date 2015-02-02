@@ -9,6 +9,8 @@
 (require 'package)
 (require 'cl)
 (add-to-list 'package-archives
+             '("org" . "http://orgmode.org/elpa/") t)
+(add-to-list 'package-archives
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (add-to-list 'package-archives
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
@@ -29,11 +31,14 @@
     whitespace
     dired+
     evil
-;;    evil-leader
+    evil-leader
+    evil-nerd-commenter
     markdown-mode
     go-mode
     company-go
     flycheck
+    editorconfig
+    org
     ))
 
 (defun udots-packages-installed-p ()
@@ -123,13 +128,33 @@
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
 ;; wind-move
-(global-set-key (kbd "C-c C-h") 'windmove-left)
-(global-set-key (kbd "C-c C-j") 'windmove-down)
-(global-set-key (kbd "C-c C-k") 'windmove-up)
-(global-set-key (kbd "C-c C-l") 'windmove-right)
+;; with evil, C-w C-hjkl is the preferred option
+;; (global-set-key (kbd "C-c C-h") 'windmove-left)
+;; (global-set-key (kbd "C-c C-j") 'windmove-down)
+;; (global-set-key (kbd "C-c C-k") 'windmove-up)
+;; (global-set-key (kbd "C-c C-l") 'windmove-right)
 
 
 ;; evil
+(evil-mode t)
+(define-key evil-motion-state-map (kbd "C-u") 'evil-scroll-up)
+(evil-ex-define-cmd "b[uffer]" 'helm-buffers-list)
+(evil-ex-define-cmd "e[dit]" 'find-file)
+
+(define-key evil-ex-map "b" 'helm-buffers-list)
+(define-key evil-ex-map "e" 'find-file)
+
+
+;; evil-leader keybindings
+(setq evil-leader/in-all-states t
+      evil-leader/leader "SPC"
+      evil-leader/non-normal-prefix "s-")
+(global-evil-leader-mode)
+
+
+(evil-leader/set-key "u" 'universal-argument)
+(evil-leader/set-key "!" 'shell-command)
+(evil-leader/set-key "b" 'helm-buffers-list)
 
 ;; go
 (add-hook 'go-mode-hook (lambda ()
