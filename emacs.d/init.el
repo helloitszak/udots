@@ -39,6 +39,9 @@
     flycheck
     editorconfig
     org
+    js2-mode
+    projectile
+    helm-projectile
     ))
 
 (defun udots-packages-installed-p ()
