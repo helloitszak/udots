@@ -39,6 +39,7 @@
     flycheck
     editorconfig
     org
+    git-gutter
     ))
 
 (defun udots-packages-installed-p ()
@@ -73,6 +74,22 @@
 ;; theme
 (require 'moe-theme)
 (moe-light)
+
+;; backups
+(defvar udots-backup-directory (concat user-emacs-directory "backups"))
+(if (not (file-exists-p udots-backup-directory))
+    (make-directory udots-backup-directory t))
+
+(setq backup-directory-alist `(("." . udots-backup-directory)))
+(setq make-backup-files t
+      backup-by-copying t
+      version-control t
+      delete-old-versions t
+      kept-old-versions 6
+      kept-new-versions 9
+      auto-save-default t
+      auto-save-timeout 20
+      auto-save-interval 200)
 
 ;; general hackery
 (setq initial-major-mode 'text-mode)
