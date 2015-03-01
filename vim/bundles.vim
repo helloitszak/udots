@@ -39,6 +39,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'shougo/vimfiler.vim'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'kshenoy/vim-signature'
+NeoBundle 'nathanaelkane/vim-indent-guides'
 
 " General VIMprovements
 NeoBundle 'tpope/vim-fugitive'
