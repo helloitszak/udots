@@ -4,6 +4,8 @@
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (set-frame-font "Droid-Sans-Mono-15" t)
+(add-to-list 'default-frame-alist
+             '(font . "Droid-Sans-Mono-15"))
 
 ;; setup packages
 (require 'package)
