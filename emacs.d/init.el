@@ -85,7 +85,7 @@
 (if (not (file-exists-p udots-backup-directory))
     (make-directory udots-backup-directory t))
 
-(setq backup-directory-alist `(("." . udots-backup-directory)))
+(setq backup-directory-alist `(("." . ,udots-backup-directory)))
 (setq make-backup-files t
       backup-by-copying t
       version-control t
