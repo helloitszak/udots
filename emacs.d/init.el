@@ -100,7 +100,7 @@
 
 ;; general hackery
 (setq initial-major-mode 'text-mode)
-(setq-default show-trailing-whitespace nil)
+(setq-default show-trailing-whitespace t)
 (show-paren-mode t)
 (setq-default indent-tabs-mode nil)
 (setq tab-width 2)
@@ -109,6 +109,15 @@
 (electric-indent-mode)
 (setq line-number-mode t)
 (setq column-number-mode t)
+
+;; make <escape> quit as much as possible
+;; s/o to spacemacs for this tip
+(define-key minibuffer-local-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key evil-visual-state-map (kbd "<escape>") 'keyboard-quit)
+(define-key minibuffer-local-ns-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-completion-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-must-match-map (kbd "<escape>") 'keyboard-escape-quit)
+(define-key minibuffer-local-isearch-map (kbd "<escape>") 'keyboard-escape-quit)
 
 ;; emacs lisp
 (add-hook 'emacs-lisp-mode-hook
@@ -186,7 +195,12 @@
 (evil-leader/set-key
   "u" 'universal-argument
   "!" 'shell-command
-  "b" 'helm-buffers-list)
+  "b" 'helm-buffers-list
+  ":" 'eval-expression
+  "x" 'execute-extended-command)
+
+(evil-leader/set-key
+  "a u" 'undo-tree-visualize)
 
 (evil-leader/set-key
   "g n" 'git-gutter:next-hunk
@@ -201,6 +215,9 @@
   "p f" 'helm-projectile-find-file
   "p b" 'helm-projectile-switch-to-buffer
   "p a" 'helm-projectile-ag)
+
+(evil-leader/set-key-for-mode 'emacs-lisp-mode
+  "c x" 'eval-defun)
 
 (evil-leader/set-key-for-mode 'go-mode
   "c f" 'gofmt
