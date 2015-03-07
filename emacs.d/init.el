@@ -182,9 +182,31 @@
 (global-evil-leader-mode)
 
 
-(evil-leader/set-key "u" 'universal-argument)
-(evil-leader/set-key "!" 'shell-command)
-(evil-leader/set-key "b" 'helm-buffers-list)
+
+(evil-leader/set-key
+  "u" 'universal-argument
+  "!" 'shell-command
+  "b" 'helm-buffers-list)
+
+(evil-leader/set-key
+  "g n" 'git-gutter:next-hunk
+  "g p" 'git-gutter:previous-hunk
+  "g h s" 'git-gutter:stage-hunk
+  "g h r" 'git-gutter:revert-hunk
+  "g s" 'magit-status)
+
+(evil-leader/set-key
+  "p p" 'helm-projectile-switch-project
+  "p d" 'projectile-dired
+  "p f" 'helm-projectile-find-file
+  "p b" 'helm-projectile-switch-to-buffer
+  "p a" 'helm-projectile-ag)
+
+(evil-leader/set-key-for-mode 'go-mode
+  "c f" 'gofmt
+  "c r" 'go-remove-unused-imports
+  "c d" 'godoc-at-point
+  "c a" 'go-import-add)
 
 ;; go
 (add-hook 'go-mode-hook (lambda ()
