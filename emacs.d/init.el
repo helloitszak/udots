@@ -101,7 +101,7 @@
 (setq-default show-trailing-whitespace nil)
 (show-paren-mode t)
 (setq-default indent-tabs-mode nil)
-(setq default-tab-width 2)
+(setq tab-width 2)
 (blink-cursor-mode 0)
 (fset 'yes-or-no-p 'y-or-n-p)
 (electric-indent-mode)
