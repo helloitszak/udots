@@ -42,6 +42,8 @@
     js2-mode
     projectile
     helm-projectile
+    helm-ag
+    web-mode
     ))
 
 (defun udots-packages-installed-p ()
@@ -111,6 +113,7 @@
 ;; emacs lisp
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
+            (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
             (setq mode-name "Elisp")
             (rainbow-delimiters-mode t)))
 
@@ -123,9 +126,18 @@
 (global-company-mode 1)
 (require 'company-go)
 
+;; git gutter
+(global-git-gutter-mode t)
 
 ;; smartparens
 (require 'smartparens-config)
+
+;;dired+
+(require 'dired+)
+
+;; flycheck
+(add-hook 'after-init-hook
+          #'global-flycheck-mode)
 
 ;; guide key
 (setq guide-key/guide-key-sequence t)
@@ -149,13 +161,9 @@
 (helm-mode t)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 
-;; wind-move
-;; with evil, C-w C-hjkl is the preferred option
-;; (global-set-key (kbd "C-c C-h") 'windmove-left)
-;; (global-set-key (kbd "C-c C-j") 'windmove-down)
-;; (global-set-key (kbd "C-c C-k") 'windmove-up)
-;; (global-set-key (kbd "C-c C-l") 'windmove-right)
-
+;; projectile
+(require 'helm-projectile)
+(projectile-global-mode)
 
 ;; evil
 (evil-mode t)
@@ -166,11 +174,11 @@
 (define-key evil-ex-map "b" 'helm-buffers-list)
 (define-key evil-ex-map "e" 'find-file)
 
-
 ;; evil-leader keybindings
 (setq evil-leader/in-all-states t
       evil-leader/leader "SPC"
       evil-leader/non-normal-prefix "s-")
+
 (global-evil-leader-mode)
 
 
@@ -186,3 +194,6 @@
                           (local-set-key (kbd "C-c C-d") 'godoc-at-point)))
 
 (add-hook 'before-save-hook 'gofmt-before-save)
+
+;; webmode
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
