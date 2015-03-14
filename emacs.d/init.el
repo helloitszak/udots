@@ -44,6 +44,7 @@
     helm-projectile
     helm-ag
     web-mode
+    powerline
     ))
 
 (defun udots-packages-installed-p ()
@@ -78,9 +79,13 @@
   (exec-path-from-shell-initialize))
 (exec-path-from-shell-copy-env "GOPATH")
 
+;; powerline
+(require 'powerline)
+
 ;; theme
 (require 'moe-theme)
 (moe-light)
+(powerline-moe-theme)
 
 ;; backups
 (defvar udots-backup-directory (concat user-emacs-directory "backups"))
@@ -113,7 +118,7 @@
 ;; make <escape> quit as much as possible
 ;; s/o to spacemacs for this tip
 (define-key minibuffer-local-map (kbd "<escape>") 'keyboard-escape-quit)
-(define-key evil-visual-state-map (kbd "<escape>") 'keyboard-quit)
+;; (define-key evil-visual-state-map (kbd "<escape>") 'keyboard-quit)
 (define-key minibuffer-local-ns-map (kbd "<escape>") 'keyboard-escape-quit)
 (define-key minibuffer-local-completion-map (kbd "<escape>") 'keyboard-escape-quit)
 (define-key minibuffer-local-must-match-map (kbd "<escape>") 'keyboard-escape-quit)
@@ -189,8 +194,6 @@
       evil-leader/non-normal-prefix "s-")
 
 (global-evil-leader-mode)
-
-
 
 (evil-leader/set-key
   "u" 'universal-argument

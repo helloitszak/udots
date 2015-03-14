@@ -20,6 +20,7 @@ emacs.d/elpa
 emacs.d/swank
 emacs.d/emms
 emacs.d/site-lisp/adventur-mode
+emacs.d/projectile-bookmarks.eld
 emacs.d/*.elc
 emacs.d/.DS_Store
 emacs.d/.yas-compiled-snippets.el
