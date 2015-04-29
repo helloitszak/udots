@@ -45,6 +45,9 @@
     helm-ag
     web-mode
     powerline
+    csharp-mode
+    omnisharp
+    floobits
     ))
 
 (defun udots-packages-installed-p ()
@@ -239,3 +242,9 @@
 
 ;; webmode
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+
+;; c#
+; (add-hook 'csharp-mode-hook 'omnisharp-mode)
+; (eval-after-load 'company
+;   '(add-to-list 'company-backends 'company-omnisharp))
