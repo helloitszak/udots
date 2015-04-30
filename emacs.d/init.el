@@ -40,6 +40,7 @@
     org
     git-gutter
     js2-mode
+    json-mode
     projectile
     helm-projectile
     helm-ag
@@ -48,6 +49,13 @@
     csharp-mode
     omnisharp
     floobits
+    zenburn-theme
+    clojure-mode
+    cider
+    restclient
+    smartparens
+    evil-lisp-state
+    evil-smartparens
     ))
 
 (defun udots-packages-installed-p ()
@@ -95,7 +103,10 @@
 (if (not (file-exists-p udots-backup-directory))
     (make-directory udots-backup-directory t))
 
-(setq backup-directory-alist `(("." . ,udots-backup-directory)))
+(setq backup-directory-alist
+      `((".*" . ,udots-backup-directory)))
+;(setq auto-save-file-name-transforms
+      ;`((".*" ,udots-backup-directory t)))
 (setq make-backup-files t
       backup-by-copying t
       version-control t
@@ -127,11 +138,18 @@
 (define-key minibuffer-local-must-match-map (kbd "<escape>") 'keyboard-escape-quit)
 (define-key minibuffer-local-isearch-map (kbd "<escape>") 'keyboard-escape-quit)
 
+;; custom emacs key bindings
+
 ;; emacs lisp
 (add-hook 'emacs-lisp-mode-hook
           (lambda ()
             (setq flycheck-disabled-checkers '(emacs-lisp-checkdoc))
             (setq mode-name "Elisp")
+            (rainbow-delimiters-mode t)))
+
+;; clojure
+(add-hook 'clojure-mode-hook
+          (lambda()
             (rainbow-delimiters-mode t)))
 
 ;; company
@@ -148,6 +166,7 @@
 
 ;; smartparens
 (require 'smartparens-config)
+(add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
 
 ;;dired+
 (require 'dired+)
@@ -231,6 +250,12 @@
   "c d" 'godoc-at-point
   "c a" 'go-import-add)
 
+(setq evil-lisp-state-global t)
+(require 'evil-lisp-state)
+
+;; smartparens
+(require 'smartparens-config)
+
 ;; go
 (add-hook 'go-mode-hook (lambda ()
                           (set (make-local-variable 'company-backends) '(company-go))
@@ -243,8 +268,27 @@
 ;; webmode
 (add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
-
 ;; c#
 ; (add-hook 'csharp-mode-hook 'omnisharp-mode)
 ; (eval-after-load 'company
 ;   '(add-to-list 'company-backends 'company-omnisharp))
+
+;; org
+(add-hook 'org-mode-hook (lambda()
+                           (set show-trailing-whitespace -1)))
+
+;; custom
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("355b84fe9816309bfbe3b26074f75daa238b8e3d1d56b69baba1739bc1005e93" "cbef37d6304f12fb789f5d80c2b75ea01465e41073c30341dc84c6c0d1eb611d" default))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
