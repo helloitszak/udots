@@ -1,3 +1,5 @@
 [core]
   excludesfile = ~/.gitignore
   autocrlf = input
+[include]
+  path=~/.gitconfig.local
