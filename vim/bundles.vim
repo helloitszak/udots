@@ -21,14 +21,6 @@ NeoBundle 'mileszs/ack.vim'
 
 " Code Completion
 " Shougo/neocomplcache.vim
-NeoBundle 'Valloric/YouCompleteMe', {
-\ 'build' : {
-\     'mac' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-\     'unix' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-\     'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-\     'cygwin' : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-\    }
-\ }
 NeoBundle 'tpope/vim-endwise'
 
 " UI
