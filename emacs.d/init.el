@@ -241,6 +241,10 @@
   "p b" 'helm-projectile-switch-to-buffer
   "p a" 'helm-projectile-ag)
 
+(evil-leader/set-key
+  "f m" 'make-frame
+  "f d" 'delete-frame)
+
 (evil-leader/set-key-for-mode 'emacs-lisp-mode
   "c x" 'eval-defun)
 
