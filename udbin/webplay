@@ -1,0 +1,3 @@
+#!/bin/bash
+echo "Note: this will not do high quality youtube stuff as it is not aware of DASH"
+mpv $(youtube-dl -g "$1")
