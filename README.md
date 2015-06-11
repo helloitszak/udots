@@ -37,5 +37,7 @@ on first vim or emacs launch you'll need to install a ton of packages. I use
 NeoBundle on vim and package.el on emacs
 
 ## updating
-1. `git pull` in `~/.udots`
+1. `cd ~/.udots`
+1. `git pull`
+2. `git submodule update --recursive`
 2. run `bootstrap.sh`
