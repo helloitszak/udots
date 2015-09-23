@@ -70,6 +70,9 @@ path=(
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 
+export TWITCHER_PROGRAM="livestreamer"
+
+
 
 #
 # Less
