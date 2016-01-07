@@ -12,6 +12,8 @@
              '("marmalade" . "http://marmalade-repo.org/packages/") t)
 (package-initialize)
 
+
+(package-refresh-contents)
 ;; setup use-package, which is used later to actually install packages
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
@@ -173,7 +175,7 @@
 (use-package clojure-mode
   :ensure t)
 
-(use-package cider-mode
+(use-package cider
   :ensure t
   :config
   (add-hook 'cider-mode-hook (lambda () (eldoc-mode t))))
