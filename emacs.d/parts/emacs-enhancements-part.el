@@ -68,4 +68,6 @@
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize)))
 
+(global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
+
 (provide 'emacs-enhancements-part)
