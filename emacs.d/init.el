@@ -173,9 +173,12 @@
 (use-package clojure-mode
   :ensure t)
 
-(use-package cider
+(use-package cider-mode
   :ensure t
   :config
   (add-hook 'cider-mode-hook (lambda () (eldoc-mode t))))
+
+(use-package web-mode
+  :ensure t)
 
 (provide 'init)
