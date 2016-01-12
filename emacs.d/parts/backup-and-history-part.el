@@ -18,4 +18,4 @@
 	search-ring
 	regexp-search-ring))
 
-(provide 'backup-and-history)
+(provide 'backup-and-history-part)

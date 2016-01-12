@@ -2,6 +2,8 @@
 (when (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (when (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+(add-to-list 'default-frame-alist '(font . "Source Code Pro Regular-14"))
+
 ;; setup packages
 (require 'package)
 (add-to-list 'package-archives
