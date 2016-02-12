@@ -5,7 +5,8 @@
 (setq delete-old-versions -1)
 (setq version-control t)
 (setq vc-make-backup-files t)
-(setq auto-save-file-name-transforms `((".*" ,(expand-file-name "auto-save-list" user-emacs-directory) t)))
+(setq auto-save-file-name-transforms
+      `((".*" ,(concat (expand-file-name "auto-save-list" user-emacs-directory) "/") t)))
 
 ;; history
 (setq savehist-file (expand-file-name "savehist" user-emacs-directory))
