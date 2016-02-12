@@ -31,4 +31,10 @@
   :config
   (global-flycheck-mode))
 
+(use-package expand-region
+  :ensure t)
+
+(use-package yaml-mode
+  :ensure t)
+
 (provide 'code-editing-part)

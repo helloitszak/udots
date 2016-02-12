@@ -62,6 +62,15 @@
   (which-key-mode 1)
   (setq which-key-idle-delay 0.5))
 
+(use-package visual-regexp
+  :ensure t)
+
+(use-package ag
+  :ensure t)
+
+(use-package editorconfig
+  :ensure t)
+
 (use-package exec-path-from-shell
   :ensure t
   :config
