@@ -38,6 +38,12 @@
 ;; General packages for code editing
 (require 'code-editing-part)
 
+;; Org mode
+(require 'org-part)
+
+;; Prose (markdown, latex, etc.)
+(require 'prose-part)
+
 ;; Code for emacs lisp
 (require 'emacs-lisp-part)
 
@@ -50,7 +56,13 @@
 ;; Go
 ;; (exec-path-from-shell-copy-env "GOPATH")
 
+;; C#
+(require 'csharp-part)
+
 ;; Web Tech (html, css, js, etc.)
 (require 'web-tech-part)
+
+;; Sysadmin
+(require 'sysadmin-part)
 
 (provide 'init)
