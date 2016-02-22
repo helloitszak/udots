@@ -53,6 +53,19 @@
 ;; Clojure, Cider, etc.
 (require 'clojure-part)
 
+;; C/C++
+(use-package cmake-ide
+  :ensure t
+  :config
+  (cmake-ide-setup))
+
+(use-package cmake-mode
+  :ensure t)
+
+;;(use-package irony
+;;  :ensure t)
+
+
 ;; Go
 ;; (exec-path-from-shell-copy-env "GOPATH")
 
