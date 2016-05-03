@@ -56,7 +56,9 @@ fpath=(
 path=(
   $HOME/bin
   $HOME/.udots/udbin
+  $HOME/.multirust/toolchains/beta/cargo/bin
   $GOPATH/bin
+  $HOME/perl5/bin
   /usr/local/opt/go/libexec/bin
   /usr/local/{bin,sbin}
   /usr/bin
@@ -68,10 +70,15 @@ path=(
 # Default homebrew to /Applications over ~/Applications
 #
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-
-
 export TWITCHER_PROGRAM="livestreamer"
 
+#
+# Perl
+#
+export PERL5LIB="${HOME}/perl5/lib/perl5${PERL5LIB+:}${PERL5LIB}"; export PERL5LIB;
+export PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LIB_ROOT}";
+export PERL_MB_OPT="--install_base \"${HOME}/perl5\"";
+export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5";
 
 
 #

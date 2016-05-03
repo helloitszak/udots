@@ -16,6 +16,9 @@ emacs.d/*~
 emacs.d/.places
 emacs.d/session.*
 emacs.d/tramp
+emacs.d/kkcrc
+emacs.d/savehist
+emacs.d/smex-items
 emacs.d/elpa
 emacs.d/swank
 emacs.d/emms
@@ -29,3 +32,4 @@ emacs.d/url/
 emacs.d/var/
 emacs.d/.sx/
 emacs.d/bookmarks
+emacs.d/eshell

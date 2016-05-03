@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -euf -o pipefail
+
+if [ "$#" -lt 1 ]; then
+  echo "Usage: showssl domain [port]"
+  exit 1
+fi
+
+domain=$1
+port=${2:-443}
+
+echo "Certificate Lookup for $domain:$port"
+openssl s_client -servername "$domain" -connect "$domain:$port" -showcerts < /dev/null
+
