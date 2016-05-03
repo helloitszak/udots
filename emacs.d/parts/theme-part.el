@@ -8,9 +8,20 @@
 (defadvice load-theme (before theme-dont-propagate activate)
   (mapcar #'disable-theme custom-enabled-themes))
 
+;; (defvar udots/themelist (list 'moe-light))
+
+;; (defun quicktheme (theme)
+;;   (interactive (list (intern (completing-read "Theme: "
+;; 					      (mapcar 'symbol-name
+;; 						      udots/themelist))) nil nil))
+;;   (load-theme theme t))
+
+
 ;; (load-theme 'moe-light t)
+
+(load-theme 'moe-light t)
 ;; (load-theme 'moe-dark t)
-(load-theme 'spacemacs-dark t)
+;;(load-theme 'spacemacs-light t)
 ;; (load-theme 'solarized-dark t)
 
 (provide 'theme-part)

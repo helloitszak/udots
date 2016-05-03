@@ -15,7 +15,7 @@
 (package-initialize)
 
 
-(package-refresh-contents)
+;; (package-refresh-contents)
 ;; setup use-package, which is used later to actually install packages
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
@@ -65,6 +65,8 @@
 ;;(use-package irony
 ;;  :ensure t)
 
+;; Haskell
+(require 'haskell-part)
 
 ;; Go
 ;; (exec-path-from-shell-copy-env "GOPATH")
@@ -77,5 +79,12 @@
 
 ;; Sysadmin
 (require 'sysadmin-part)
+
+;; Misc
+(use-package graphviz-dot-mode
+  :ensure t)
+
+(use-package csv-mode
+  :ensure t)
 
 (provide 'init)
