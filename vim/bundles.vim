@@ -74,6 +74,8 @@ NeoBundle 'jnwhiteh/vim-golang'
 
 NeoBundle 'tpope/vim-fireplace'
 
+NeoBundle 'derekwyatt/vim-scala'
+
 " Motions
 NeoBundle 'lokaltog/vim-easymotion'
 NeoBundle 'goldfeld/vim-seek'
