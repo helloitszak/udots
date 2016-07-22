@@ -4,6 +4,12 @@
 ;; Makes M-e (forward-sentence) and M-a (backward-sentence) work like a sane human
 (setq sentence-end-double-space nil)
 
+;; Don't let emacs quit itself
+(setq confirm-kill-emacs 'y-or-n-p)
+
+;; Prevent fat fingering
+(global-unset-key (kbd "s-q"))
+
 ;; allows y or n in place of yes or no
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -29,6 +35,9 @@
 ;; ido mode, for now
 (ido-mode t)
 (setq ido-enable-flex-matching t)
+
+;; Make tab insert spaces by default
+(setq-default indent-tabs-mode nil)
 
 ;; smex = ido for M-x
 (use-package smex
