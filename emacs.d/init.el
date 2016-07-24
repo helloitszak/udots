@@ -26,6 +26,9 @@
 ;; user custom packages
 (add-to-list 'load-path (expand-file-name "parts" user-emacs-directory))
 
+;; Packages I need
+(require 'cl-lib)
+
 ;; Emacs UI Enhancements and General Editor-Wide things.
 (require 'emacs-enhancements-part)
 
@@ -52,6 +55,9 @@
 
 ;; Clojure, Cider, etc.
 (require 'clojure-part)
+
+;; Golang
+(require 'go-part)
 
 ;; C/C++
 (use-package cmake-ide

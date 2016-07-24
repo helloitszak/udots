@@ -84,7 +84,8 @@
   :ensure t
   :config
   (when (memq window-system '(mac ns))
-    (exec-path-from-shell-initialize)))
+    (exec-path-from-shell-initialize)
+    (exec-path-from-shell-copy-env "GOPATH")))
 
 (global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
 
