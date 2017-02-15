@@ -1,0 +1,6 @@
+#!/bin/bash
+echo "=== stats for: $1 ==="
+whois "$1" | grep --color=never -E "(Reseller:|Registrar:|Date:|Status:)"
+dig +noall +answer NS "$1"
+dig +noall +answer "$1"
+echo "====================="
