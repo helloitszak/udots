@@ -56,7 +56,7 @@ fpath=(
 path=(
   $HOME/bin
   $HOME/.udots/udbin
-  $HOME/.multirust/toolchains/beta/cargo/bin
+  $HOME/.cargo/bin
   $GOPATH/bin
   $HOME/perl5/bin
   /usr/local/opt/go/libexec/bin
@@ -64,6 +64,7 @@ path=(
   /usr/bin
   $path
 )
+
 
 #
 # Homebrew
