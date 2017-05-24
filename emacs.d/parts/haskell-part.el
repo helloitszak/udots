@@ -3,12 +3,15 @@
   :init
   (setq haskell-process-type 'cabal-repl))
 
-(use-package flycheck-haskell
+;; (use-package flycheck-haskell
+;;   :ensure t
+;;   :config
+;;   (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
+
+(use-package intero
   :ensure t
   :config
-  (add-hook 'flycheck-mode-hook #'flycheck-haskell-setup))
-
-;
+  (add-hook 'haskell-mode-hook 'intero-mode))
 
 ;(use-package ghc-mod
 ;  :ensure t)
