@@ -39,6 +39,9 @@
 ;; Make tab insert spaces by default
 (setq-default indent-tabs-mode nil)
 
+;; Don't clobber the system clipboard with emacs kills
+(setq save-interprogram-paste-before-kill t)
+
 ;; smex = ido for M-x
 (use-package smex
   :ensure t
@@ -86,6 +89,15 @@
   (when (memq window-system '(mac ns))
     (exec-path-from-shell-initialize)
     (exec-path-from-shell-copy-env "GOPATH")))
+
+;; (use-package dired+
+;;   :ensure t
+;;   :config
+;;   (when (eq system-type 'darwin)
+;;     (require 'ls-lisp)
+;;     (setq ls-lisp-use-insert-directory-program nil)))
+  
+
 
 (global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
 

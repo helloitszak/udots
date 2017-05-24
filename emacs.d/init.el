@@ -59,6 +59,9 @@
 ;; Golang
 (require 'go-part)
 
+;; Rust
+(require 'rust-part)
+
 ;; C/C++
 (use-package cmake-ide
   :ensure t

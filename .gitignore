@@ -34,3 +34,6 @@ emacs.d/var/
 emacs.d/.sx/
 emacs.d/bookmarks
 emacs.d/eshell
+
+# emacs misc
+.#*
