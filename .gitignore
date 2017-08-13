@@ -34,6 +34,10 @@ emacs.d/var/
 emacs.d/.sx/
 emacs.d/bookmarks
 emacs.d/eshell
+emacs.d/games
+emacs.d/semanticdb
+emacs.d/.mc-lists.el
+emacs.d/recentf
 
 # emacs misc
 .#*
