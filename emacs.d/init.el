@@ -32,6 +32,7 @@
 (csetq cursor-type 'bar)
 (setq sentence-end-double-space nil)
 (csetq indicate-empty-lines t)
+(csetq save-interprogram-paste-before-kill t)
 
 ;; Emacs Lisp
 (csetq load-prefer-newer t)
@@ -84,6 +85,14 @@
   :config
   (load-theme 'gruvbox-light-medium t))
 
+(defun lights-on ()
+  (interactive)
+  (load-theme 'gruvbox-light-medium t))
+
+(defun lights-off ()
+  (interactive)
+  (load-theme 'gruvbox-dark-medium t))
+
 
 ;; Handy Utilities
 (defun udots/start-or-switch-to (function buffer-name)
@@ -104,6 +113,7 @@ the current buffer."
   :ensure t
   :config
   (when (memq window-system '(mac ns))
+    (csetq exec-path-from-shell-arguments nil)
     (exec-path-from-shell-initialize)
     (exec-path-from-shell-copy-env "GOPATH")))
 
@@ -126,7 +136,7 @@ the current buffer."
   :bind
   ("C-x C-b" . ibuffer)
   :config
-  (setq ibuffer-saved-filter-groupsq
+  (setq ibuffer-saved-filter-groups
         '(("default"
            ("dired" (mode . dired-mode))
            ("Help" (or
@@ -136,6 +146,11 @@ the current buffer."
            ("emacs" (or
                      (name . "^\\*scratch\\*$")
                      (name . "^\\*Messages\\*$")))))))
+
+(use-package ibuffer-projectile
+  :ensure t)
+
+
 ;; Eshell
 (use-package eshell
   :bind
@@ -217,6 +232,19 @@ the current buffer."
   :config
   (counsel-projectile-on))
 
+;; Org
+(use-package org
+  :ensure t)
+
+;; Markdown
+(use-package markdown-mode
+  :ensure t
+  :commands (markdown-mode gfm-mode)
+  :mode (("README\\.md\\'" . gfm-mode)
+         ("\\.md\\'" . markdown-mode)
+         ("\\.markdown\\'" . markdown-mode))
+  :init (setq markdown-command "multimarkdown"))
+
 ;; Emacs Lisp
 (use-package lisp-mode
   :config
@@ -237,6 +265,8 @@ Starts `ielm' if it's not already running."
 
 ;; General Lisps
 (use-package lispy
+  :init
+  (csetq lispy-compat '(edebug cider))
   :ensure t)
 
 (use-package aggressive-indent
@@ -282,9 +312,24 @@ Starts `ielm' if it's not already running."
 (use-package cider
   :ensure t)
 
+(use-package clj-refactor
+  :ensure t)
+
 ;; Haskell
 (use-package haskell-mode
   :ensure t)
 
 (use-package intero
+  :ensure t)
+
+;; YAML
+(use-package yaml-mode
+  :ensure t)
+
+;; Puppet
+(use-package puppet-mode
+  :ensure t)
+
+;; Editorconfig
+(use-package editorconfig
   :ensure t)
