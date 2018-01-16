@@ -79,7 +79,7 @@ function prompt_uberline_setup {
     'prompt' '%K{green}%D git:$(coalesce "%b" "%p" "%c")%s%A%B%S%a%d%r%U%u ' \
     'rprompt' ''
 
-  prompt_opts=(cr percent subst)
+  prompt_opts=(cr percent sp subst)
   PROMPT=$(build_prompt)
   SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 }
