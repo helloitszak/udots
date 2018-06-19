@@ -23,14 +23,14 @@
 ;; Editor Quality of life
 (csetq indent-tabs-mode nil)
 (csetq truncate-lines t)
-(setq ring-bell-function 'ignore)
+(csetq ring-bell-function 'ignore)
 (defalias 'yes-or-no-p 'y-or-n-p)
 (csetq confirm-kill-emacs 'y-or-n-p)
 (csetq line-number-mode t)
 (csetq column-number-mode t)
 (blink-cursor-mode 0)
 (csetq cursor-type 'bar)
-(setq sentence-end-double-space nil)
+(csetq sentence-end-double-space nil)
 (csetq indicate-empty-lines t)
 (csetq save-interprogram-paste-before-kill t)
 
@@ -75,6 +75,14 @@
 (global-unset-key (kbd "s-q"))
 (global-unset-key (kbd "C-z"))
 (global-set-key (kbd "<s-return>") 'toggle-frame-fullscreen)
+
+
+;; There's no place like vim
+(global-set-key (kbd "s-h") 'backward-char)
+(global-set-key (kbd "s-j") 'next-line)
+(global-set-key (kbd "s-k") 'previous-line)
+(global-set-key (kbd "s-l") 'forward-char)
+
 
 (require 'use-package)
 
@@ -198,7 +206,6 @@ the current buffer."
   :ensure t
   :config
   (ivy-mode 1)
-  (csetq 
   (csetq ivy-initial-inputs-alist nil)
   (csetq ivy-display-style 'fancy)
   (csetq ivy-use-virtual-buffers t)
@@ -266,7 +273,8 @@ the current buffer."
 ;; Org
 (use-package org
   :ensure t
-
+  :config
+  (csetq org-src-window-setup 'current-window)
   :bind
   (("C-c c" . org-capture)
    :map
@@ -278,7 +286,7 @@ the current buffer."
   :config
   ;; Setup
   (csetq org-agenda-files '("~/code/journal"
-                            "~/code/journal/spikeup"))
+                            "~/code/journal/clients"))
 
   (csetq org-default-notes-file "~/code/journal/refile.org")
 
@@ -707,8 +715,31 @@ Starts `ielm' if it's not already running."
 (use-package puppet-mode
   :ensure t)
 
+;; Salt
+(use-package salt-mode
+  :ensure t)
+
 ;; Editorconfig
 (use-package editorconfig
+  :ensure t)
+
+;; Lua
+(use-package lua-mode
+  :ensure t)
+
+;; Ace-window
+(use-package ace-window
+  :bind
+  ("M-o" . ace-window)
+  :ensure t)
+
+
+;; PHP
+(use-package php-mode
+  :ensure t)
+
+;; Evil
+(use-package evil
   :ensure t)
 
 
@@ -720,7 +751,7 @@ Starts `ielm' if it's not already running."
  '(org-support-shift-select t)
  '(package-selected-packages
    (quote
-    (lsp-rust ac-emmet lsp-mode yaml-mode which-key use-package undo-tree rainbow-delimiters puppet-mode markdown-mode magit macrostep lispy ivy-hydra intero ibuffer-projectile gruvbox-theme go-eldoc expand-region exec-path-from-shell editorconfig discover-my-major diminish counsel-projectile company-go clj-refactor alchemist aggressive-indent))))
+    (org-query php-mode evil lua-mode lua salt-mode lsp-rust ac-emmet lsp-mode yaml-mode which-key use-package undo-tree rainbow-delimiters puppet-mode markdown-mode magit macrostep lispy ivy-hydra intero ibuffer-projectile gruvbox-theme go-eldoc expand-region exec-path-from-shell editorconfig discover-my-major diminish counsel-projectile company-go clj-refactor alchemist aggressive-indent))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
