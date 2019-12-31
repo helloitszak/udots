@@ -21,5 +21,7 @@
       create: true
       path: nvim
 
+    ~/.emacs.d: emacs.d
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
