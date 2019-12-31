@@ -32,3 +32,17 @@ alias grep="${aliases[grep]:-grep} --color=auto"
 # More human friendly df and du
 alias df='df -kh'
 alias du='du -kh'
+
+
+# Neovim
+function ovim {
+    command vim "$@"
+}
+
+function vim {
+    if type nvim > /dev/null 2>&1; then
+        command nvim "$@"
+    else
+        command vim "$@"
+    fi
+}

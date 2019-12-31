@@ -16,5 +16,10 @@
     ~/.gitignore: git/gitignore
     ~/.gitconfig: git/gitconfig
 
+    # nvim
+    ~/.config/nvim:
+      create: true
+      path: nvim
+
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
