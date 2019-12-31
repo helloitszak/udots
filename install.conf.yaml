@@ -21,7 +21,11 @@
       create: true
       path: nvim
 
+    # Emacs
     ~/.emacs.d: emacs.d
+
+    # mpv
+    ~/.config/mpv: mpv
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

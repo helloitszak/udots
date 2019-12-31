@@ -17,3 +17,9 @@
 [submodule "nvim/vim-plug"]
 	path = nvim/vim-plug
 	url = https://github.com/junegunn/vim-plug
+[submodule "mpv/ext/mpv-repl"]
+	path = mpv/ext/mpv-repl
+	url = https://github.com/rossy/mpv-repl
+[submodule "mpv/ext/mpv-prescalers"]
+	path = mpv/ext/mpv-prescalers
+	url = https://github.com/bjin/mpv-prescalers
