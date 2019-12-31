@@ -41,13 +41,7 @@ export GOPATH=$CODE/go
 
 typeset -gU cdpath fpath mailpath path
 
-# Set the the list of directories that cd searches.
-# cdpath=(
-#   $cdpath
-# )
-
 fpath=(
-  $HOME/.udots/zshfunc
   $fpath
 )
 
@@ -62,9 +56,9 @@ path=(
   /usr/local/opt/go/libexec/bin
   /usr/local/{bin,sbin}
   /usr/bin
+  /Applications/Emacs.app/Contents/MacOS/bin
   $path
 )
-
 
 #
 # Homebrew

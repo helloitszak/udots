@@ -1,3 +1,16 @@
-[submodule "prezto"]
-	path = zprezto
-	url = https://github.com/sorin-ionescu/prezto
+[submodule "zsh/ext/zsh-completions"]
+	path = zsh/ext/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions
+[submodule "zsh/ext/zsh-history-substring-search"]
+	path = zsh/ext/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search
+[submodule "zsh/ext/zsh-syntax-highlighting"]
+	path = zsh/ext/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "zsh/ext/zsh-async"]
+	path = zsh/ext/zsh-async
+	url = https://github.com/mafredri/zsh-async
+[submodule "dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+	ignore = dirty

@@ -1,0 +1,28 @@
+[core]
+  excludesfile = ~/.gitignore
+  autocrlf = input
+[include]
+  path=~/.gitconfig.local
+
+
+[apply]
+
+	# Detect whitespace errors when applying a patch
+	whitespace = fix
+
+[diff]
+
+	# Detect copies as well as renames
+	renames = copies
+
+[diff "bin"]
+
+	# Use `hexdump` to diff binary files
+	textconv = hexdump -v -C
+
+[push]
+
+	# https://git-scm.com/docs/git-config#git-config-pushdefault
+	default = simple
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true

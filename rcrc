@@ -1,3 +1,0 @@
-EXCLUDES="README.md README udbin bootstrap.sh"
-SYMLINK_DIRS="zprezto vim emacs.d"
-DOTFILES_DIRS="$HOME/.udots"

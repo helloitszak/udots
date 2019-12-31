@@ -1,0 +1,20 @@
+- defaults:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    # ZSH
+    ~/.zlogin: zsh/zlogin
+    ~/.zlogout: zsh/zlogout
+    ~/.zprofile: zsh/zprofile
+    ~/.zshenv: zsh/zshenv
+    ~/.zshrc: zsh/zshrc
+
+    # Git
+    ~/.gitignore: git/gitignore
+    ~/.gitconfig: git/gitconfig
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
