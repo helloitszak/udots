@@ -17,8 +17,14 @@ fi
 # Editors
 #
 
-export EDITOR='vim'
-export VISUAL='vim'
+if type nvim > /dev/null 2>&1; then
+  export EDITOR='nvim'
+  export VISUAL='nvim'
+else
+  export EDITOR='vim'
+  export VISUAL='vim'
+fi
+
 export PAGER='less'
 
 #
@@ -51,6 +57,7 @@ path=(
   $HOME/bin
   $HOME/.udots/udbin
   $HOME/.cargo/bin
+  $HOME/.poetry/bin
   $GOPATH/bin
   $HOME/perl5/bin
   /usr/local/opt/go/libexec/bin
@@ -103,3 +110,4 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
+
