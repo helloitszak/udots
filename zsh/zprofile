@@ -58,12 +58,14 @@ path=(
   $HOME/.udots/udbin
   $HOME/.cargo/bin
   $HOME/.poetry/bin
-  $GOPATH/bin
   $HOME/perl5/bin
   /usr/local/opt/go/libexec/bin
   /usr/local/{bin,sbin}
   /usr/bin
+  '/Applications/Racket v7.7/bin'
   /Applications/Emacs.app/Contents/MacOS/bin
+  $HOME/.poetry/bin
+  $HOME/.ghcup/bin
   $path
 )
 
@@ -82,6 +84,12 @@ export PERL_LOCAL_LIB_ROOT="${HOME}/perl5${PERL_LOCAL_LIB_ROOT+:}${PERL_LOCAL_LI
 export PERL_MB_OPT="--install_base \"${HOME}/perl5\"";
 export PERL_MM_OPT="INSTALL_BASE=${HOME}/perl5";
 
+#
+# Ruby
+#
+if command -v rbenv >/dev/null 2>&1; then
+  eval "$(rbenv init -)"
+fi
 
 #
 # Less
@@ -110,4 +118,5 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
+
 

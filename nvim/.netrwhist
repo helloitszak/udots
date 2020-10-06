@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/ubercow/code/spikeup/noip-client/spades'
+let g:netrw_dirhist_3='/Users/ubercow/code/other/nut/src/trunk/libnut'
+let g:netrw_dirhist_2='/Volumes/system-boot/overlays'
+let g:netrw_dirhist_1='/Users/ubercow/code/spikeup/puppet/vms/.vagrant/machines/default/virtualbox'
+let g:netrw_dirhist_0='/Users/ubercow/code/spikeup/puppet/vms/.vagrant/machines/default'
+let g:netrw_dirhist_9='/Users/ubercow/code/spikeup/puppet/vms/.vagrant/machines'
+let g:netrw_dirhist_8='/Users/ubercow/code/spikeup/puppet/vms/.vagrant'
+let g:netrw_dirhist_7='/Users/ubercow/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/puppet-6.15.0/lib/puppet/application'
+let g:netrw_dirhist_6='/Users/ubercow/.rbenv/versions/2.5.8/lib/ruby/gems/2.5.0/gems/puppet-6.15.0/lib/puppet'
+let g:netrw_dirhist_5='/Users/ubercow/code/other/wikimedia-puppet/hieradata'
