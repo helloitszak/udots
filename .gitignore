@@ -9,6 +9,9 @@ vim/sessions
 vim/backups
 vim/view
 
+# nvim
+nvim/.netrwhist
+
 # emacs
 emacs.d/ido.last
 emacs.d/auto-save-list
